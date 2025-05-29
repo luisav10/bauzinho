@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baú da Merenda Digital - Gerenciamento</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header-modern-chic">
+        <img src="logo_bau_merenda_clean.png" alt="Logo Baú da Merenda" class="logo-chic">
+        <h1>Painel da Merendeira</h1>
+        <p>Gerencie o cardápio e acompanhe a demanda.</p>
+        <nav>
+            <a href="index.html" class="btn-chic secondary-outline">Voltar para Alunos</a>
+        </nav>
+    </header>
+
+    <main class="main-content-modern-chic">
+        <section id="auth-section" class="section-card auth-card">
+            <h2>Bem-vinda, Merendeira!</h2>
+            <p id="auth-message"></p>
+            <form id="login-form" class="auth-form">
+                <input type="text" id="login-usuario" placeholder="Usuário" required>
+                <input type="password" id="login-senha" placeholder="Senha" required>
+                <button type="submit" class="btn-chic primary">Login</button>
+            </form>
+            <button id="show-cadastro-btn" class="btn-chic secondary-outline">Novo Cadastro</button>
+
+            <form id="cadastro-form" class="auth-form" style="display:none;">
+                <h3>Realizar Cadastro</h3>
+                <input type="text" id="cadastro-usuario" placeholder="Defina um Usuário" required>
+                <input type="password" id="cadastro-senha" placeholder="Defina uma Senha" required>
+                <input type="password" id="confirmar-senha" placeholder="Confirme a Senha" required>
+                <button type="submit" class="btn-chic primary">Cadastrar</button>
+                <button type="button" id="hide-cadastro-btn" class="btn-chic secondary-outline">Voltar para Login</button>
+            </form>
+        </section>
+
+        <section id="admin-panel-section" style="display:none;">
+            <section id="cardapio-gerenciamento-section" class="section-card">
+                <h2>Gerenciar Cardápio do Dia</h2>
+                <form id="add-item-form" class="item-form">
+                    <input type="text" id="item-nome" placeholder="Nome do Alimento (ex: Arroz)" required>
+                    <select id="item-tipo">
+                        <option value="porcao">Por Porção (ex: Arroz, Feijão)</option>
+                        <option value="unidade">Por Unidade (ex: Ovo Cozido)</option>
+                    </select>
+                    <button type="submit" class="btn-chic primary">Adicionar Item</button>
+                </form>
+                <div id="cardapio-list-admin">
+                    </div>
+            </section>
+
+            <section id="relatorio-section" class="section-card">
+                <h2>Relatório de Merenda do Dia</h2>
+                <div id="relatorio-contagem-merendeira">
+                    </div>
+                <div class="chart-container">
+                    <canvas id="merendaChart"></canvas>
+                </div>
+                <button id="gerar-relatorio-pdf-merendeira" class="btn-chic action">Gerar Relatório em PDF</button>
+                <button id="reset-dados-btn" class="btn-chic action-danger">Zerar Dados do Dia</button>
+                <button id="logout-btn" class="btn-chic secondary-outline">Sair</button>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer-modern-chic">
+        <p>&copy; 2025 Baú da Merenda. Projeto para a FETEPS.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="admin_script.js"></script>
+</body>
+</html>

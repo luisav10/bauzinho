@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baú da Merenda Digital - Seu Prato</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header-modern-chic">
+        <img src="logo_bau_merenda_clean.png" alt="Logo Baú da Merenda" class="logo-chic">
+        <h1>Baú da Merenda Digital</h1>
+        <p>A experiência gourmet da sua merenda escolar.</p>
+        <div class="header-info">
+            <span id="current-date" class="info-item"></span>
+            <span id="current-time" class="info-item"></span>
+        </div>
+    </header>
+
+    <main class="main-content-modern-chic">
+        <section class="cardapio-hoje-chic section-card">
+            <h2>Monte seu Prato</h2>
+            <div class="turnos-selection">
+                <h3>Escolha seu Turno:</h3>
+                <div class="turnos-buttons">
+                    <button class="btn-turno active" data-turno="Manhã">Manhã</button>
+                    <button class="btn-turno" data-turno="Tarde">Tarde</button>
+                    <button class="btn-turno" data-turno="Noite">Noite</button>
+                </div>
+            </div>
+            <div id="cardapio-itens-aluno" class="itens-grid-chic">
+                </div>
+            <button id="confirmar-escolha-aluno" class="btn-chic primary">Confirmar Minha Escolha</button>
+        </section>
+
+        <section class="admin-access-section section-card">
+            <p>Acesso exclusivo para a equipe de merendeiras:</p>
+            <a href="admin.html" class="btn-chic secondary">Painel da Merendeira</a>
+        </section>
+    </main>
+
+    <footer class="footer-modern-chic">
+        <p>&copy; 2025 Baú da Merenda. Projeto para a FETEPS.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,592 @@
+/* style.css */
+
+:root {
+    /* Cores ajustadas para um tema mais sofisticado */
+    --primary-color: #8E5A36;   /* Madeira escura/Bronze (para o chique) */
+    --secondary-color: #C08C63; /* Madeira clara/Bege (para o chique) */
+    --accent-color: #7C9F59;    /* Verde suave/Esmeralda (toque de cor, menos vibrante) */
+    --text-dark: #333333;       /* Preto suave */
+    --text-light: #F8F8F8;      /* Branco off-white */
+    --background-white: #FFFFFF; /* Fundo principal branco */
+    --border-color: #E0E0E0;    /* Cinza claro para bordas suaves */
+    --error-red: #dc3545;       /* Vermelho para erros */
+
+    --gold-accent: #B8860B; /* Dourado para um toque de luxo */
+
+    --border-radius-soft: 8px; /* Cantos levemente arredondados */
+    --box-shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    --transition-speed-fast: 0.2s ease-in-out;
+    --transition-speed-normal: 0.3s ease-in-out;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Fonte moderna para o corpo */
+    background-color: var(--background-white);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Títulos com fonte serifada elegante */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Fonte serifada para elegância */
+    color: var(--primary-color); /* Cor principal para títulos */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); /* Sombra muito sutil */
+}
+
+/* Cabeçalho */
+.header-modern-chic {
+    background-color: var(--primary-color); /* Cor escura elegante */
+    color: var(--text-light);
+    width: 100%;
+    padding: 25px 0;
+    text-align: center;
+    box-shadow: var(--box-shadow-subtle);
+    margin-bottom: 40px;
+    position: relative; /* Para posicionar infos */
+}
+
+.logo-chic {
+    height: 90px; /* Tamanho da logo */
+    margin-bottom: 15px;
+    border-radius: 50%; /* Se a logo permitir, um toque suave */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-modern-chic h1 {
+    font-size: 3em;
+    color: var(--secondary-color); /* Contraste sutil */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+
+.header-modern-chic p {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 10px;
+}
+
+.header-modern-chic nav {
+    margin-top: 20px;
+}
+
+.header-info {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.info-item {
+    margin-bottom: 5px;
+}
+
+
+/* Conteúdo Principal */
+.main-content-modern-chic {
+    width: 90%;
+    max-width: 1100px; /* Mais largura para um layout espaçoso */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.section-card {
+    background-color: var(--background-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-soft);
+    padding: 35px;
+    box-shadow: var(--box-shadow-subtle);
+    text-align: center;
+    flex: 1;
+    min-width: 350px; /* Garante que os cards não fiquem muito pequenos */
+    box-sizing: border-box;
+}
+
+.section-card h2 {
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Seção de Acesso à Merendeira (abaixo do cardápio do aluno) */
+.admin-access-section {
+    flex-basis: 100%; /* Ocupa toda a largura abaixo */
+    margin-top: 20px;
+    padding: 25px;
+    background-color: var(--secondary-color); /* Cor mais clara */
+    color: var(--text-dark);
+}
+
+.admin-access-section p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+
+/* Estilo para itens do cardápio do aluno */
+.itens-grid-chic {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Itens um pouco maiores */
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.item-merenda-chic {
+    background-color: var(--background-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-soft);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-speed-normal);
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.item-merenda-chic:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent-color); /* Borda suave no hover */
+}
+
+.item-merenda-chic.selected {
+    border-color: var(--accent-color);
+    background-color: rgba(124, 159, 89, 0.08); /* Fundo muito suave de destaque */
+    box-shadow: 0 0 0 3px rgba(124, 159, 89, 0.3), var(--box-shadow-subtle); /* Borda de destaque suave */
+    transform: scale(1.02);
+}
+
+.item-merenda-chic img {
+    width: 100px; /* Ícone da merenda */
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 4px; /* Pequeno arredondamento para os ícones */
+}
+
+.item-merenda-chic p {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* Checkmark de seleção (melhorado para ser mais discreto e elegante) */
+.item-merenda-chic::after {
+    content: '✓'; /* Um simples tick unicode */
+    color: var(--accent-color);
+    background-color: var(--background-white);
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.item-merenda-chic.selected::after {
+    display: flex;
+}
+
+/* Controles de quantidade para "unidade" */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    background-color: var(--border-color); /* Fundo suave */
+    padding: 5px;
+    border-radius: 20px; /* Botões mais arredondados */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.quantity-btn {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 1.4em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color var(--transition-speed-fast);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.quantity-btn:hover {
+    background-color: #6C422A; /* Um pouco mais escuro */
+}
+
+.item-quantity {
+    color: var(--primary-color);
+    font-size: 1.4em;
+    font-weight: 600;
+    margin: 0 15px;
+    min-width: 20px; /* Garante que o número não "pule" */
+}
+
+/* Botões Modernos e Chiques */
+.btn-chic {
+    display: inline-block;
+    padding: 15px 30px;
+    border: none;
+    border-radius: var(--border-radius-soft);
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    transition: all var(--transition-speed-normal);
+    box-shadow: var(--box-shadow-subtle);
+    text-decoration: none; /* Para links */
+    margin: 10px auto; /* Para espaçamento */
+}
+
+.btn-chic.primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-chic.primary:hover {
+    background-color: #6C422A;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-chic.secondary {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.btn-chic.secondary:hover {
+    background-color: #A6724E;
+    color: var(--text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-chic.secondary-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-chic.secondary-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-chic.action { /* Para botões de ação do admin como "Gerar PDF" */
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    margin-top: 25px;
+}
+
+.btn-chic.action:hover {
+    background-color: #618043;
+    transform: translateY(-2px);
+}
+
+.btn-chic.action-danger { /* Para "Zerar Dados" */
+    background-color: var(--error-red);
+    color: var(--text-light);
+    margin-top: 15px; /* Espaçamento entre os botões de ação */
+}
+
+.btn-chic.action-danger:hover {
+    background-color: #bb2d3b;
+    transform: translateY(-2px);
+}
+
+/* Estilos de Autenticação (admin.html) */
+.auth-card {
+    max-width: 480px;
+    margin: 50px auto;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="password"],
+.item-form input[type="text"],
+.item-form select {
+    padding: 14px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-soft);
+    font-size: 1.05em;
+    background-color: var(--background-white);
+    color: var(--text-dark);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: border-color var(--transition-speed-fast), box-shadow var(--transition-speed-fast);
+    width: calc(100% - 36px);
+    box-sizing: border-box;
+}
+
+.auth-form input[type="text"]:focus,
+.auth-form input[type="password"]:focus,
+.item-form input[type="text"]:focus,
+.item-form select:focus {
+    border-color: var(--gold-accent); /* Dourado no foco */
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08), 0 0 0 3px rgba(184, 134, 11, 0.2); /* Sombra dourada suave */
+}
+
+#auth-message {
+    color: var(--error-red);
+    font-weight: 600;
+    margin-top: 15px;
+    font-size: 0.95em;
+}
+
+/* Estilos para o Gerenciamento de Cardápio */
+#admin-panel-section {
+    width: 100%; /* Garante que o painel ocupe a largura total disponível */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+#cardapio-gerenciamento-section {
+    flex: 1;
+    min-width: 400px;
+}
+
+#relatorio-section {
+    flex: 1;
+    min-width: 400px;
+}
+
+.item-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+#cardapio-list-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.cardapio-item-admin {
+    background-color: #F8F8F8; /* Um fundo mais claro */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-soft) / 2;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.05em;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.cardapio-item-admin .item-info {
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.cardapio-item-admin .item-type {
+    font-size: 0.85em;
+    color: var(--primary-color);
+    font-style: italic;
+    margin-left: 10px;
+}
+
+.cardapio-item-admin .delete-btn {
+    background-color: var(--error-red);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: background-color var(--transition-speed-fast);
+}
+
+.cardapio-item-admin .delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Estilo do relatório da merendeira */
+#relatorio-contagem-merendeira p {
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+#relatorio-contagem-merendeira strong {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+#relatorio-contagem-merendeira span {
+    font-family: 'Playfair Display', serif; /* Mantendo a fonte de título aqui */
+    font-size: 1.1em;
+    color: var(--gold-accent); /* Dourado para os números */
+    margin-left: 8px;
+    font-weight: 700;
+}
+
+/* Gráfico */
+.chart-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #FDFDFD;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-soft);
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Turnos de merenda */
+.turnos-selection {
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+.turnos-selection h3 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.turnos-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-turno {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius-soft);
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: all var(--transition-speed-fast);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-turno:hover {
+    background-color: #A6724E;
+    color: var(--text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-turno.active {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border-color: var(--gold-accent); /* Dourado para o ativo */
+    box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Rodapé */
+.footer-modern-chic {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 0.9em;
+    margin-top: auto;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-modern-chic h1 {
+        font-size: 2.2em;
+    }
+    .header-modern-chic p {
+        font-size: 1em;
+    }
+    .header-info {
+        position: static;
+        margin-top: 15px;
+        align-items: center;
+    }
+    .section-card {
+        padding: 25px;
+        min-width: unset;
+        width: 95%;
+    }
+    .section-card h2 {
+        font-size: 1.8em;
+    }
+    .itens-grid-chic {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 15px;
+    }
+    .item-merenda-chic img {
+        width: 80px;
+        height: 80px;
+    }
+    .item-merenda-chic p {
+        font-size: 1em;
+    }
+    .btn-chic {
+        font-size: 0.9em;
+        padding: 12px 25px;
+    }
+    .turnos-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .btn-turno {
+        width: 80%;
+        margin: 0 auto;
+    }
+    #admin-panel-section {
+        flex-direction: column;
+    }
+    #cardapio-gerenciamento-section, #relatorio-section {
+        min-width: unset;
+        width: 100%;
+    }
+}
